@@ -34,7 +34,12 @@ Open http://localhost:8000 . The application has no npm build step. Node is used
 Settings → Pages → GitHub Actions. The workflow `.github/workflows/pages.yml` runs both test suites and publishes `dist/` when main changes. Keep asset URLs relative to the repository path. Do not publish `.openai/hosting.json`.
 
 ## Files
-`dist/catalogue.json` is the source of truth. `dist/source-mapping.csv` and `COMPLETE-MAPPING.md` preserve selected record-to-workflow links. `dist/logic.js` owns ranking, filtering and fictional inbox rules. `dist/app.js`, `dist/index.html` and `dist/styles.css` implement the restored sidebar and dashboard interface. `discovery.py` validates and exports briefs. `prompts/discover.md` describes future model-assisted extraction; no live model or autonomous Drive ingestion is implemented.
+`dist/catalogue.json` is the source of truth. `dist/source-mapping.csv` and `COMPLETE-MAPPING.md` preserve selected record-to-workflow links. `dist/logic.js` owns ranking, filtering and fictional inbox rules. `dist/app.js`, `dist/index.html` and `dist/styles.css` implement the blue-and-white healthcare platform, responsive navigation, use-case cards, source table and accessible dialogs. `discovery.py` validates and exports briefs. `prompts/discover.md` describes future model-assisted extraction; no live model or autonomous Drive ingestion is implemented.
 
 ## Reference version
 Copied from sriharanmuthyala/healthcare-agent-lab at commit `70cd4831380cd9ab2b788200ba65c9b59c37058d`. The URLs above are the intended publication destinations; deployment must be verified after upload.
+
+## Interface redesign review
+The redesign uses self-hosted Inter, lightweight SVG icons, readable workflow cards and a labelled catalogue-driven chart. Ranking, catalogue data and the deterministic inbox rules are preserved. Sources clearly separate HHS deployment stages from proposed prototype status.
+
+The UI supports reduced motion, visible keyboard focus, labelled form controls, skip navigation and keyboard-managed mobile navigation. The existing seven tests pass, and 38 DOM integration checks passed. Rendered desktop/mobile verification and screenshots remain pending because the preview infrastructure was unavailable; this is not a claim of WCAG certification. Do not merge this review branch into main until the redesign has been reviewed.
