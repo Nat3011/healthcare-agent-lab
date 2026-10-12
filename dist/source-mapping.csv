@@ -1,0 +1,40 @@
+CSV record,HHS use case,Agency,Reported stage,Adapted workflows,Source
+290,Medical records summarization,HHS/HRSA,Pre-deployment,records,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+217,Case Management Tool Case Creation & Automation,HHS/CMS/OIT,Pilot,intake,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+90,"Detecting, evaluating, and redacting PII in NAMCS HC Component",HHS/CDC,Pre-deployment,redaction,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+117,Use of National Language Processing/Machine Learning to Identify Personal Identifiers in Health Center EHR Medication Data,HHS/CDC,Pre-deployment,redaction,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+27,AHRQ Search,HHS/AHRQ/CQuIPS,Deployed,guidance,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+51,Immunization Information Systems Guidance Documentation Navigation and Management (IDAB EDAV Azure OpenAI Technology Use),HHS/CDC,Pre-deployment,guidance,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+154,Resource Library Assistant,HHS/CMS/CCSQ,Pre-deployment,guidance,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+186,AI Language Translation Support in Smartling,HHS/CMS/OC,Deployed,translation,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+152,Complaint Analysis ,HHS/CMS/OPOLE,Pilot,complaints,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+177,Health Plan Management System - Complaint Tracking Analysis,HHS/CMS/CM,Pre-deployment,complaints,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+161,Citation Analysis and Survey Assistant (CASA - Nursing Home Survey CMS 2567),HHS/CMS/CCSQ,Deployed,quality,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+173,Artificial Intelligence Use Case Pilot in Medical Review on Medicare Fee-For-Service (FFS) Improper Payment Measurement (Comprehensive Error Rate Testing Program) Data,HHS/CMS/OFM,Pre-deployment,claims,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+206,RADV Medical Record Review,HHS/CMS/CCIIO,Pre-deployment,claims,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+204,Rx Data Integrity Review,HHS/CMS/CCIIO,Pre-deployment,medication,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+97,DLS AI Assistant tool,HHS/CDC,Pilot,lab,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+215,Eligibility & Enrollment Medicare Online (ELMO) Chatbot,HHS/CMS/OIT,Deployed,navigation,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+305,Program Compliance and Reporting Knowledge Base Chatbot,HHS/HRSA,Pre-deployment,navigation,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+189,Medicare AI Drug Search,HHS/CMS/OC,Pilot,benefits,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+190,Marketplace Qualified Health Plan Benefit AI Assistant (discovery),HHS/CMS/OC,Pre-deployment,benefits,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+208,SBC Content Review,HHS/CMS/CCIIO,Pre-deployment,benefits,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+41,The NEF DSI/AI project addresses local validation of AI-based clinical decision support (CDS)/decision support interventions (DSI) in provider settings.,HHS/ASTP,Pre-deployment,validation,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+48,Reviewing Global Influenza Vaccine Literature,HHS/CDC,Pilot,vaccine-evidence,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+67,Autocoding to Support Adverse Drug Event Surveillance,HHS/CDC,Pilot,adverse-coding,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+77,1CDP (SEDRIC) AIP for Advanced Foodborne Outbreak Investigation (AI Summarization and Receipt Reading),HHS/CDC,Deployed,outbreak,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+82,Nowcasting Injury Trends,HHS/CDC,Deployed,injury-trends,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+83,Risk Assessment Module (RAM) for the National Diabetes Prevention Program (National DPP) Operations Center.,HHS/CDC,Deployed,prevention,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+84,Semi-Automated Nonresponse Detection for Surveys (SANDS),HHS/CDC,Deployed,survey-check,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+85,Sequential Coverage Algorithm (SCA) and partial Expectation-Maximization (EM) estimation in Record Linkage,HHS/CDC,Deployed,linkage,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+87,Assessing Large Language Models for Synthetic Survey Data Generation,HHS/CDC,Pre-deployment,synthetic-data,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+109,"Analyzing multidrug-resistant organism response data
+",HHS/CDC,Pre-deployment,amr-notes,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+112,HIV Data Quality Score (DQS) Project,HHS/CDC,Pre-deployment,report-quality,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+120,Bridging the gap: Leveraging natural language processing to identify reasons for buprenorphine discontinuation in Electronic Health Records,HHS/CDC,Pre-deployment,access-barriers,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+126,Using Databricks Genie for Routine Immunization Data Insights,HHS/CDC,Pilot,immunisation,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+139,Deep Research for Public Health,HHS/CDC,Pilot,public-brief,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+156,Medicare Part C/D Marketing Material Review,HHS/CMS/OPOLE,Pre-deployment,materials,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+164,Improved Data Quality Checks,HHS/CMS/CCIIO,Pre-deployment,application-quality,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+280,ChatBot for Safety Reporting Portal Adverse Events and Product problems submissions,HHS/FDA/ODT,Deployed,safety-report,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html
+303,"AI identification of ""High-Risk"" Health Centers",HHS/HRSA,Pre-deployment,oversight,https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html

@@ -1,0 +1,1482 @@
+{
+  "generated_at": "2026-10-12",
+  "scope": "Human healthcare administration, patient services, care quality, patient safety, health data and public health. Animal health, life-sciences research and general-purpose agency work excluded.",
+  "ranking_basis": "Analyst estimates for fictional-data prototype suitability; not measured ROI or clinical effectiveness.",
+  "weights": {
+    "value": 25,
+    "feasibility": 25,
+    "data": 20,
+    "safety": 15,
+    "evidence": 10,
+    "clarity": 5
+  },
+  "sources": [
+    {
+      "id": "hhs-fy25",
+      "title": "HHS AI Use Case Inventory FY25",
+      "file": "hhs-ai-use-case-inventory-fy25.csv",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "drive_url": "https://drive.google.com/file/d/1qgaPiLovgpss42ljS7JxNSGcKaEa7lho/view",
+      "type": "Government inventory supplied through Google Drive",
+      "note": "Source stages are HHS-reported. Our fictional-data prototypes are adaptations, not implementations of HHS systems or evidence of clinical effectiveness."
+    }
+  ],
+  "cases": [
+    {
+      "id": "records",
+      "title": "Medical record summary",
+      "category": "Healthcare",
+      "sub_category": "Clinical administration",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 290 (header counted as record 1)",
+      "adaptation": "The HHS entry concerns claims review. This prototype adapts document condensation to clinician-reviewed records; it gives no diagnosis or treatment recommendation.",
+      "examples": [
+        "HHS-290"
+      ],
+      "scores": {
+        "value": 5,
+        "feasibility": 5,
+        "data": 5,
+        "safety": 4,
+        "evidence": 5,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Medical records reviewer",
+      "pain": "Reviewing long medical records takes time and makes supporting evidence hard to locate.",
+      "workflow": "Create a dated summary with links to the supplied record passages.",
+      "demo_input": "Three fictional visit notes and a referral letter.",
+      "demo_output": "A chronology, missing-information list and passage references.",
+      "metric": "Summary completeness and incorrect statements per record.",
+      "stage": "Scoped prototype candidate"
+    },
+    {
+      "id": "intake",
+      "title": "Referral and document intake",
+      "category": "Healthcare",
+      "sub_category": "Clinical administration",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 217 (header counted as record 1)",
+      "adaptation": "The HHS entry concerns case creation from scanned requests. Patient referral routing is a proposed local adaptation, not an HHS deployment claim.",
+      "examples": [
+        "HHS-217"
+      ],
+      "scores": {
+        "value": 5,
+        "feasibility": 5,
+        "data": 5,
+        "safety": 4,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Referral coordinator",
+      "pain": "Staff manually create cases from incoming documents and requests.",
+      "workflow": "Extract administrative fields, propose a case record and flag missing information.",
+      "demo_input": "Fictional referral forms and an explicit required-field checklist.",
+      "demo_output": "A proposed intake record and exceptions for staff approval.",
+      "metric": "Correct field extraction and missed required fields.",
+      "stage": "Scoped prototype candidate"
+    },
+    {
+      "id": "redaction",
+      "title": "Patient data redaction",
+      "category": "Healthcare",
+      "sub_category": "Clinical administration",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 90, 117 (header counted as record 1)",
+      "adaptation": "Adapted from HHS health-record PII detection. The prototype is a review aid and does not certify anonymisation.",
+      "examples": [
+        "HHS-90",
+        "HHS-117"
+      ],
+      "scores": {
+        "value": 5,
+        "feasibility": 4,
+        "data": 5,
+        "safety": 5,
+        "evidence": 5,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Health information team",
+      "pain": "Identifiers can appear unexpectedly inside free-text health data.",
+      "workflow": "Highlight possible identifiers and propose redactions for manual review.",
+      "demo_input": "Synthetic notes with deliberately inserted names, addresses and identifiers.",
+      "demo_output": "Marked text, proposed redacted copy and a review log.",
+      "metric": "Missed identifiers and incorrectly removed useful text.",
+      "stage": "Scoped prototype candidate"
+    },
+    {
+      "id": "guidance",
+      "title": "Clinical guidance search",
+      "category": "Healthcare",
+      "sub_category": "Clinical administration",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 27, 51, 154 (header counted as record 1)",
+      "adaptation": "HHS entries concern search and IIS or programme guidance. Adapted to approved clinic material; no independent clinical advice.",
+      "examples": [
+        "HHS-27",
+        "HHS-51",
+        "HHS-154"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 5,
+        "data": 5,
+        "safety": 5,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Low",
+      "user": "Clinical operations staff",
+      "pain": "Staff lose time locating current approved guidance across documents.",
+      "workflow": "Search a small approved guidance library and return cited passages.",
+      "demo_input": "Fictional clinic procedures and approved administrative FAQs.",
+      "demo_output": "A cited answer with source version and an unable-to-answer state.",
+      "metric": "Citation accuracy and time to find the approved passage.",
+      "stage": "Scoped prototype candidate"
+    },
+    {
+      "id": "translation",
+      "title": "Patient information translation",
+      "category": "Healthcare",
+      "sub_category": "Patient services",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 186 (header counted as record 1)",
+      "adaptation": "HHS reports translation support in Smartling. This is an adaptation to patient communication, not evidence of medical translation accuracy.",
+      "examples": [
+        "HHS-186"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 5,
+        "data": 5,
+        "safety": 4,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Patient communications team",
+      "pain": "Approved patient information may be inaccessible in the reader’s language.",
+      "workflow": "Draft a translation of approved administrative information for bilingual review.",
+      "demo_input": "Fictional appointment preparation and access instructions.",
+      "demo_output": "A translation draft and a list of terms requiring verification.",
+      "metric": "Meaning preserved and critical terms checked by a qualified reviewer.",
+      "stage": "Scoped prototype candidate"
+    },
+    {
+      "id": "complaints",
+      "title": "Patient complaint analysis",
+      "category": "Healthcare",
+      "sub_category": "Quality and operations",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 152, 177 (header counted as record 1)",
+      "adaptation": "HHS examples concern beneficiary complaints. Adapted to service improvement; the tool does not decide complaint outcomes.",
+      "examples": [
+        "HHS-152",
+        "HHS-177"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 5,
+        "safety": 4,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Patient experience team",
+      "pain": "Large complaint volumes obscure recurring service problems.",
+      "workflow": "Group fictional complaints by theme and cite representative passages.",
+      "demo_input": "Synthetic service complaints without real personal details.",
+      "demo_output": "A theme summary, examples and proposed follow-up questions.",
+      "metric": "Theme agreement with staff and incorrectly grouped complaints.",
+      "stage": "Scoped prototype candidate"
+    },
+    {
+      "id": "quality",
+      "title": "Care quality document review",
+      "category": "Healthcare",
+      "sub_category": "Quality and operations",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 161 (header counted as record 1)",
+      "adaptation": "Inspired by CASA nursing-home survey review. The demo flags evidence for review; it makes no regulatory finding.",
+      "examples": [
+        "HHS-161"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 4,
+        "safety": 3,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "High",
+      "user": "Quality improvement reviewer",
+      "pain": "Reviewing care-quality reports against documented standards is time-consuming.",
+      "workflow": "Compare fictional quality observations with an explicit checklist.",
+      "demo_input": "Synthetic care-quality observations and a supplied local checklist.",
+      "demo_output": "A cited checklist review with issues for qualified assessment.",
+      "metric": "Missed checklist gaps and reviewer agreement.",
+      "stage": "Scoped prototype candidate"
+    },
+    {
+      "id": "claims",
+      "title": "Claims evidence preparation",
+      "category": "Healthcare",
+      "sub_category": "Clinical administration",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 173, 206 (header counted as record 1)",
+      "adaptation": "US Medicare and Marketplace examples need Australian process adaptation. No automated eligibility, payment or coverage decision.",
+      "examples": [
+        "HHS-173",
+        "HHS-206"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 4,
+        "safety": 3,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "High",
+      "user": "Claims documentation reviewer",
+      "pain": "Medical evidence for a claim must be manually located and cross-referenced.",
+      "workflow": "Assemble supplied evidence against an explicit fictional claim checklist.",
+      "demo_input": "Synthetic claim packet, record excerpts and declared review requirements.",
+      "demo_output": "An evidence index and missing-document questions.",
+      "metric": "Evidence retrieval accuracy and unsupported assertions.",
+      "stage": "Scoped prototype candidate"
+    },
+    {
+      "id": "medication",
+      "title": "Medication document consistency",
+      "category": "Healthcare",
+      "sub_category": "Clinical administration",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 204 (header counted as record 1)",
+      "adaptation": "Adapted from Rx formulary integrity review. The demo does not verify dosages, prescribe or recommend medication changes.",
+      "examples": [
+        "HHS-204"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 3,
+        "data": 4,
+        "safety": 3,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "High",
+      "user": "Pharmacy documentation reviewer",
+      "pain": "Medication-related documents can contain inconsistent entries across sources.",
+      "workflow": "Compare supplied text entries and flag discrepancies for pharmacist review.",
+      "demo_input": "Fictional medication lists and reference documents.",
+      "demo_output": "A discrepancy report quoting both sources.",
+      "metric": "Discrepancies found and false positives.",
+      "stage": "Scoped prototype candidate"
+    },
+    {
+      "id": "lab",
+      "title": "Laboratory procedure search",
+      "category": "Healthcare",
+      "sub_category": "Clinical administration",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 97 (header counted as record 1)",
+      "adaptation": "Inspired by the DLS AI Assistant pilot. US CLIA/ISO references in the original inventory are not automatically Australian requirements.",
+      "examples": [
+        "HHS-97"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 4,
+        "safety": 4,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Laboratory quality team",
+      "pain": "Laboratory staff need quick access to procedure and quality guidance.",
+      "workflow": "Retrieve cited passages from an approved laboratory procedure pack.",
+      "demo_input": "Fictional SOPs and laboratory quality FAQs.",
+      "demo_output": "A referenced response with document version.",
+      "metric": "Source accuracy and missing information identified.",
+      "stage": "Scoped prototype candidate"
+    },
+    {
+      "id": "navigation",
+      "title": "Healthcare service navigation",
+      "category": "Healthcare",
+      "sub_category": "Patient services",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 215, 305 (header counted as record 1)",
+      "adaptation": "Adapted from ELMO and programme knowledge-base support. No entitlement or eligibility determination.",
+      "examples": [
+        "HHS-215",
+        "HHS-305"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 5,
+        "safety": 4,
+        "evidence": 3,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Service support team",
+      "pain": "Users need help navigating service systems and reporting requirements.",
+      "workflow": "Explain an approved administrative process and provide the next reviewable step.",
+      "demo_input": "A fictional service manual and system navigation guide.",
+      "demo_output": "A cited navigation answer with staff handoff when unclear.",
+      "metric": "Correct next-step guidance and successful handoffs.",
+      "stage": "Scoped prototype candidate"
+    },
+    {
+      "id": "benefits",
+      "title": "Health benefits document comparison",
+      "category": "Healthcare",
+      "sub_category": "Patient services",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 189, 190, 208 (header counted as record 1)",
+      "adaptation": "Inspired by Marketplace benefits assistance and SBC review. Local benefits must be supplied; the prototype does not determine coverage.",
+      "examples": [
+        "HHS-189",
+        "HHS-190",
+        "HHS-208"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 4,
+        "safety": 4,
+        "evidence": 3,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Benefits information reviewer",
+      "pain": "Benefits documents can contain inconsistent wording or numerical values.",
+      "workflow": "Compare two fictional benefits documents and identify differences.",
+      "demo_input": "Synthetic benefit summaries and explicitly supplied policy clauses.",
+      "demo_output": "A difference table with supporting quotes.",
+      "metric": "Discrepancy accuracy and unsupported coverage claims.",
+      "stage": "Scoped prototype candidate"
+    },
+    {
+      "id": "validation",
+      "title": "Clinical AI validation checklist",
+      "category": "Healthcare",
+      "sub_category": "Quality and operations",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 41 (header counted as record 1)",
+      "adaptation": "Inspired by the NEF local CDS validation project. This demo evaluates fictional outputs; it does not validate a clinical system for use.",
+      "examples": [
+        "HHS-41"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 3,
+        "data": 4,
+        "safety": 2,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "High",
+      "user": "Clinical governance reviewer",
+      "pain": "Locally deployed decision support needs evaluation against suitable reference labels.",
+      "workflow": "Compare supplied fictional predictions with reference labels and display review metrics.",
+      "demo_input": "Synthetic labelled test cases and declared acceptance thresholds.",
+      "demo_output": "An accuracy and error breakdown, with limitations for governance review.",
+      "metric": "Error rates by test group and reproducibility.",
+      "stage": "Scoped prototype candidate"
+    },
+    {
+      "id": "vaccine-evidence",
+      "title": "Vaccine access evidence screening",
+      "category": "Healthcare",
+      "sub_category": "Public health",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 48 (header counted as record 1)",
+      "adaptation": "Follows the inventory’s vaccine-access abstract screening workflow. Human reviewers make inclusion decisions; no vaccination recommendation is generated.",
+      "examples": [
+        "HHS-48"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 4,
+        "safety": 3,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Public health evidence reviewer",
+      "pain": "Reviewers must screen many abstracts to find evidence about vaccine access.",
+      "workflow": "Screen supplied abstracts against explicit inclusion criteria and cite the matching text.",
+      "demo_input": "A small public abstract pack and vaccine-access screening criteria.",
+      "demo_output": "A candidate reading list with reasons to include or exclude each abstract.",
+      "metric": "Agreement with manual screening and missed relevant abstracts.",
+      "stage": "Scoped prototype candidate"
+    },
+    {
+      "id": "adverse-coding",
+      "title": "Adverse event coding review",
+      "category": "Healthcare",
+      "sub_category": "Patient safety",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 67 (header counted as record 1)",
+      "adaptation": "Inspired by CDC adverse drug event surveillance. This prototype proposes reviewed codes rather than estimating clinical event probabilities or diagnosing patients.",
+      "examples": [
+        "HHS-67"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 3,
+        "data": 4,
+        "safety": 2,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "High",
+      "user": "Surveillance coding reviewer",
+      "pain": "Manually coding emergency-visit narratives slows adverse event surveillance.",
+      "workflow": "Suggest surveillance labels from fictional narratives and explain the evidence for review.",
+      "demo_input": "Synthetic emergency visit descriptions and supplied coding definitions.",
+      "demo_output": "Proposed labels, cited evidence and an uncertain-case queue.",
+      "metric": "Coding agreement and missed adverse-event examples.",
+      "stage": "Scoped prototype candidate"
+    },
+    {
+      "id": "outbreak",
+      "title": "Outbreak investigation summary",
+      "category": "Healthcare",
+      "sub_category": "Public health",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 77 (header counted as record 1)",
+      "adaptation": "Adapted from SEDRIC summarisation and receipt reading. It makes no outbreak attribution or public health action decision.",
+      "examples": [
+        "HHS-77"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 3,
+        "data": 4,
+        "safety": 2,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "High",
+      "user": "Outbreak investigation team",
+      "pain": "Outbreak investigators must combine receipts, interview notes and shared case information.",
+      "workflow": "Extract food purchases and summarise the supplied investigation timeline with citations.",
+      "demo_input": "Synthetic receipts and fictional interview notes.",
+      "demo_output": "A purchase table, chronology and unresolved investigator questions.",
+      "metric": "Extraction accuracy and unsupported connections.",
+      "stage": "Scoped prototype candidate"
+    },
+    {
+      "id": "injury-trends",
+      "title": "Injury surveillance trend dashboard",
+      "category": "Healthcare",
+      "sub_category": "Public health",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 82 (header counted as record 1)",
+      "adaptation": "The HHS system nowcasts national injury deaths. The initial prototype is descriptive; a validated forecasting model would be separate work.",
+      "examples": [
+        "HHS-82"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 3,
+        "data": 4,
+        "safety": 2,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "High",
+      "user": "Surveillance analyst",
+      "pain": "Delayed injury reporting makes current trends difficult to interpret.",
+      "workflow": "Visualise supplied aggregate weekly counts and flag incomplete reporting periods.",
+      "demo_input": "Synthetic aggregate injury counts with reporting-delay metadata.",
+      "demo_output": "A trend dashboard separating observed values from any experimental estimates.",
+      "metric": "Trend calculation accuracy and uncertainty coverage on held-out synthetic data.",
+      "stage": "Scoped prototype candidate"
+    },
+    {
+      "id": "prevention",
+      "title": "Prevention programme follow-up",
+      "category": "Healthcare",
+      "sub_category": "Quality and operations",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 83 (header counted as record 1)",
+      "adaptation": "Adapted from National DPP organisation risk assessment. No patient-level risk prediction or programme eligibility decision.",
+      "examples": [
+        "HHS-83"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 4,
+        "safety": 3,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Prevention programme coordinator",
+      "pain": "Programme teams need to identify organisations missing participation or performance milestones.",
+      "workflow": "Check organisation-level milestones and draft follow-up questions for staff review.",
+      "demo_input": "Fictional programme enrolment counts, milestones and declared rules.",
+      "demo_output": "A review queue with missed milestones and supporting evidence.",
+      "metric": "Correct flags and inappropriate escalations.",
+      "stage": "Scoped prototype candidate"
+    },
+    {
+      "id": "survey-check",
+      "title": "Health survey response quality",
+      "category": "Healthcare",
+      "sub_category": "Public health",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 84 (header counted as record 1)",
+      "adaptation": "Inspired by SANDS. Reviewers decide whether to retain responses; the tool does not infer respondents’ health status.",
+      "examples": [
+        "HHS-84"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 4,
+        "safety": 4,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Low",
+      "user": "Health survey reviewer",
+      "pain": "Open-ended survey nonresponses are expensive to review manually.",
+      "workflow": "Flag blank, irrelevant or ambiguous responses against a supplied rubric.",
+      "demo_input": "Synthetic health-survey responses and a review rubric.",
+      "demo_output": "A quality review queue with reason codes and original response text.",
+      "metric": "Agreement with manual review and useful responses incorrectly flagged.",
+      "stage": "Scoped prototype candidate"
+    },
+    {
+      "id": "linkage",
+      "title": "Health record matching review",
+      "category": "Healthcare",
+      "sub_category": "Clinical administration",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 85 (header counted as record 1)",
+      "adaptation": "Adapted from NCHS record linkage. No automatic merge, clinical identity assertion or production patient linkage.",
+      "examples": [
+        "HHS-85"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 3,
+        "data": 4,
+        "safety": 2,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "High",
+      "user": "Health data steward",
+      "pain": "Linking records across datasets requires careful matching and duplicate review.",
+      "workflow": "Propose candidate record pairs using declared matching fields for manual confirmation.",
+      "demo_input": "Synthetic records with known duplicates and deliberate near matches.",
+      "demo_output": "Candidate pairs, match reasons and unresolved conflicts.",
+      "metric": "False merges and missed true matches.",
+      "stage": "Scoped prototype candidate"
+    },
+    {
+      "id": "synthetic-data",
+      "title": "Synthetic health survey sandbox",
+      "category": "Healthcare",
+      "sub_category": "Health data",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 87 (header counted as record 1)",
+      "adaptation": "Inspired by NCHS synthetic survey research. Uses invented inputs only and makes no privacy guarantee or claim of equivalent analytic utility.",
+      "examples": [
+        "HHS-87"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 4,
+        "safety": 3,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Health data evaluation team",
+      "pain": "Teams need realistic test data without exposing survey participants.",
+      "workflow": "Generate fictional survey examples from a declared schema and compare aggregate properties.",
+      "demo_input": "A fictional survey schema and manually declared distributions.",
+      "demo_output": "Synthetic test rows and a validation report.",
+      "metric": "Schema validity and aggregate distribution differences.",
+      "stage": "Scoped prototype candidate"
+    },
+    {
+      "id": "amr-notes",
+      "title": "Infection response note categorisation",
+      "category": "Healthcare",
+      "sub_category": "Patient safety",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 109 (header counted as record 1)",
+      "adaptation": "Based on CDC AMR response-data categorisation. It does not diagnose infection, recommend antibiotics or decide infection-control action.",
+      "examples": [
+        "HHS-109"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 3,
+        "data": 4,
+        "safety": 2,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "High",
+      "user": "Infection prevention reviewer",
+      "pain": "Free-text antimicrobial resistance response notes are hard to clean and analyse.",
+      "workflow": "Propose categories for fictional response notes and preserve the supporting text.",
+      "demo_input": "Synthetic infection-response logs and a supplied category list.",
+      "demo_output": "A categorised table with ambiguous entries marked for review.",
+      "metric": "Category agreement and missed response details.",
+      "stage": "Scoped prototype candidate"
+    },
+    {
+      "id": "report-quality",
+      "title": "Health programme data quality",
+      "category": "Healthcare",
+      "sub_category": "Health data",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 112 (header counted as record 1)",
+      "adaptation": "Inspired by HIV DQS. Generalised to fictional programme reporting; no real HIV data or automatic source changes.",
+      "examples": [
+        "HHS-112"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 4,
+        "safety": 3,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Programme data manager",
+      "pain": "Submitted programme datasets contain errors requiring manual cleanup.",
+      "workflow": "Check required fields and logical constraints, then propose corrections for approval.",
+      "demo_input": "Synthetic programme submissions with deliberately inserted data errors.",
+      "demo_output": "A field-level issue list and proposed changes with an audit trail.",
+      "metric": "Errors detected and incorrect corrections.",
+      "stage": "Scoped prototype candidate"
+    },
+    {
+      "id": "access-barriers",
+      "title": "Treatment access barrier review",
+      "category": "Healthcare",
+      "sub_category": "Quality and operations",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 120 (header counted as record 1)",
+      "adaptation": "Adapted from the buprenorphine discontinuation project. No inference of substance use, treatment advice or individual risk prediction.",
+      "examples": [
+        "HHS-120"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 3,
+        "data": 4,
+        "safety": 2,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "High",
+      "user": "Care improvement reviewer",
+      "pain": "Service teams need to understand documented reasons for treatment discontinuation.",
+      "workflow": "Extract explicitly stated access barriers from fictional notes and group them for review.",
+      "demo_input": "Synthetic treatment journey notes with stated transport, access or scheduling barriers.",
+      "demo_output": "A cited barrier summary with unknown reasons left unresolved.",
+      "metric": "Extraction agreement and reasons invented by the tool.",
+      "stage": "Scoped prototype candidate"
+    },
+    {
+      "id": "immunisation",
+      "title": "Immunisation reporting explorer",
+      "category": "Healthcare",
+      "sub_category": "Public health",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 126 (header counted as record 1)",
+      "adaptation": "Inspired by Databricks Genie immunisation insights. Queries a fixed local synthetic dataset; no individual vaccination recommendation.",
+      "examples": [
+        "HHS-126"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 4,
+        "safety": 3,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Immunisation programme analyst",
+      "pain": "Aggregate immunisation reporting requires specialised queries and data preparation.",
+      "workflow": "Translate a plain-language question into a visible query against a synthetic dataset.",
+      "demo_input": "Synthetic aggregate immunisation data and a documented data dictionary.",
+      "demo_output": "A reviewable query, result table and chart.",
+      "metric": "Query correctness and consistency with manually calculated totals.",
+      "stage": "Scoped prototype candidate"
+    },
+    {
+      "id": "public-brief",
+      "title": "Public health evidence brief",
+      "category": "Healthcare",
+      "sub_category": "Public health",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 139 (header counted as record 1)",
+      "adaptation": "Adapted from Deep Research for Public Health. Fixed supplied sources rather than autonomous policy or legal recommendations.",
+      "examples": [
+        "HHS-139"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 4,
+        "safety": 3,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Public health policy reviewer",
+      "pain": "Staff need timely, traceable summaries across complex public health information.",
+      "workflow": "Build a concise brief from a fixed source pack with citations and evidence gaps.",
+      "demo_input": "Approved public health excerpts and an explicit question.",
+      "demo_output": "A cited draft brief distinguishing facts, uncertainties and proposed follow-up.",
+      "metric": "Citation support and omissions against the source pack.",
+      "stage": "Scoped prototype candidate"
+    },
+    {
+      "id": "materials",
+      "title": "Health plan communication review",
+      "category": "Healthcare",
+      "sub_category": "Patient services",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 156 (header counted as record 1)",
+      "adaptation": "Inspired by Medicare Part C/D marketing review. Local rules must be supplied; no regulatory compliance certification.",
+      "examples": [
+        "HHS-156"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 4,
+        "safety": 3,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Patient communications reviewer",
+      "pain": "Health plan materials can contain inconsistent or unclear statements.",
+      "workflow": "Review fictional materials against a supplied communication checklist.",
+      "demo_input": "Synthetic brochures, benefit statements and a review checklist.",
+      "demo_output": "A cited issue table and wording suggestions for approval.",
+      "metric": "Checklist gaps detected and unjustified findings.",
+      "stage": "Scoped prototype candidate"
+    },
+    {
+      "id": "application-quality",
+      "title": "Health application completeness",
+      "category": "Healthcare",
+      "sub_category": "Patient services",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 164 (header counted as record 1)",
+      "adaptation": "Adapted from Marketplace data-quality checks. No eligibility determination, automatic outreach or source-system change.",
+      "examples": [
+        "HHS-164"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 4,
+        "safety": 3,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Health service intake reviewer",
+      "pain": "Missing or inconsistent application information delays the consumer feedback cycle.",
+      "workflow": "Check a fictional application and draft requests for missing information.",
+      "demo_input": "Synthetic health-service applications and required-field rules.",
+      "demo_output": "A completeness checklist and a draft follow-up message.",
+      "metric": "Missed required fields and unnecessary follow-up requests.",
+      "stage": "Scoped prototype candidate"
+    },
+    {
+      "id": "safety-report",
+      "title": "Patient safety report assistance",
+      "category": "Healthcare",
+      "sub_category": "Patient safety",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 280 (header counted as record 1)",
+      "adaptation": "Adapted from the FDA Safety Reporting Portal chatbot for human healthcare reporting only. Does not submit reports or judge causality.",
+      "examples": [
+        "HHS-280"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 3,
+        "data": 4,
+        "safety": 2,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "High",
+      "user": "Patient safety reporting team",
+      "pain": "Reporters can struggle to select a form and provide complete adverse-event information.",
+      "workflow": "Explain supplied form options and identify missing report fields for staff review.",
+      "demo_input": "A fictional incident, form catalogue and required-field checklist.",
+      "demo_output": "A suggested form and a report draft with missing fields highlighted.",
+      "metric": "Correct form selection and report completeness.",
+      "stage": "Scoped prototype candidate"
+    },
+    {
+      "id": "oversight",
+      "title": "Care quality visit planning",
+      "category": "Healthcare",
+      "sub_category": "Quality and operations",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 303 (header counted as record 1)",
+      "adaptation": "Inspired by HRSA high-risk health-centre identification. No enforcement, eligibility or automated visit scheduling; reviewers make decisions.",
+      "examples": [
+        "HHS-303"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 3,
+        "data": 4,
+        "safety": 2,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "High",
+      "user": "Care quality oversight coordinator",
+      "pain": "Planning site visits requires reviewing many quality indicators across centres.",
+      "workflow": "Compare synthetic centre metrics against declared indicators and prepare a review queue.",
+      "demo_input": "Fictional centre-level quality metrics and explicit scheduling criteria.",
+      "demo_output": "A prioritisation worksheet with reasons and missing-data flags.",
+      "metric": "Agreement with the declared criteria and incorrectly flagged centres.",
+      "stage": "Scoped prototype candidate"
+    }
+  ],
+  "examples": [
+    {
+      "id": "HHS-290",
+      "organization": "HHS/HRSA",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "Medical records summarization",
+      "row": 290,
+      "stage": "Pre-deployment",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "records"
+      ],
+      "problem": "The AI will reduce the amount of time required to review and evaluate a claim.",
+      "output": "AI will facilitate the collection and preprocessing of unstructured data, and create a condensed (and indexed) document for AI to intelligently review the thousands of pages of medical/legal documents, as part of the claims review process."
+    },
+    {
+      "id": "HHS-217",
+      "organization": "HHS/CMS/OIT",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "Case Management Tool Case Creation & Automation",
+      "row": 217,
+      "stage": "Pilot",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "intake"
+      ],
+      "problem": "Automate and optimize manual case creation for incoming documents/requests and simplify manual tasks",
+      "output": "Creates a case in the system based on a scanned document from the public, automates simple functions, etc."
+    },
+    {
+      "id": "HHS-90",
+      "organization": "HHS/CDC",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "Detecting, evaluating, and redacting PII in NAMCS HC Component",
+      "row": 90,
+      "stage": "Pre-deployment",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "redaction"
+      ],
+      "problem": "How effective are open-source PII detection models in identifying and redacting PII? The National Center for Health Statistics’ (NCHS) Division of Health Care Statistics has collected millions of health records with laboratory results from encounters at health centers via the National Ambulatory Medical Care Survey (NAMCS), Health Center (HC) Component. Due to inadvertent errors during data entry and processing, some records contain identifiers (e.g. names, locations, etc.) in non-PII fields. Due to the PII, certain fields cannot be made available for restricted or public use, but reviewing millions of records for PII is not practical.",
+      "output": "A semi-automated process to conduct a quality control review of health data records, including potential PII records flagged for manual review."
+    },
+    {
+      "id": "HHS-117",
+      "organization": "HHS/CDC",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "Use of National Language Processing/Machine Learning to Identify Personal Identifiers in Health Center EHR Medication Data",
+      "row": 117,
+      "stage": "Pre-deployment",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "redaction"
+      ],
+      "problem": "The NLP/ML processes being used are attempting to identify personal identifiers within EHR data fields that capture medication information such as name of medication and dosage of medication.",
+      "output": "The initial output provides lists/tables of person identifiers that were identified by this tool for review and/or removal from the medication data fields."
+    },
+    {
+      "id": "HHS-27",
+      "organization": "HHS/AHRQ/CQuIPS",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "AHRQ Search",
+      "row": 27,
+      "stage": "Deployed",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "guidance"
+      ],
+      "problem": "Organization wide search that includes Relevancy Tailoring, Auto-generation Synonyms, Automated Suggestions,  Suggested Related Content, Auto Tagging, and \"Did you mean?\" to allow visitors to find specific content.\n\nThis AI use case enhances our agency's efficiency and user experience by optimizing search results, auto-completing queries, suggesting relevant searches and content tags, as well as proposing spelling corrections. ",
+      "output": "This AI use case aims to optimize search results by adjusting their ranking, ensuring that the most pertinent information is displayed at the top. It also enhances search effectiveness by adding synonyms to queries behind the scenes. It further improves user experience by auto-completing queries as they are being typed, and showing related searches that might offer additional valuable insights. The system also proposes content tags automatically, leveraging machine learning to assess existing content tagging patterns. Additionally, it suggests spelling corrections and reformats search queries based on data from Google Analytics."
+    },
+    {
+      "id": "HHS-51",
+      "organization": "HHS/CDC",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "Immunization Information Systems Guidance Documentation Navigation and Management (IDAB EDAV Azure OpenAI Technology Use)",
+      "row": 51,
+      "stage": "Pre-deployment",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "guidance"
+      ],
+      "problem": "To provide a modernized, efficient, and user-friendly method for CDC staff to retrieve, interact with, and update Immunization Information Systems (IIS) guidance documentation, improving knowledge retrieval and supporting the creation and validation of new guidance documents.",
+      "output": "The AI system provides synthesized answers to user queries in a Q&A interface, retrieving and summarizing information from publicly available IIS guidance documents. Outputs include generated text responses, draft guidance documents, and updated documentation."
+    },
+    {
+      "id": "HHS-154",
+      "organization": "HHS/CMS/CCSQ",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "Resource Library Assistant",
+      "row": 154,
+      "stage": "Pre-deployment",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "guidance"
+      ],
+      "problem": "Users being able to find information related to program participation. ",
+      "output": "The AI pulls responses from preapproved documents that were fed into the system. It is not a learning model at this time. "
+    },
+    {
+      "id": "HHS-186",
+      "organization": "HHS/CMS/OC",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "AI Language Translation Support in Smartling",
+      "row": 186,
+      "stage": "Deployed",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "translation"
+      ],
+      "problem": "Improved translation",
+      "output": "Suggestion"
+    },
+    {
+      "id": "HHS-152",
+      "organization": "HHS/CMS/OPOLE",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "Complaint Analysis ",
+      "row": 152,
+      "stage": "Pilot",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "complaints"
+      ],
+      "problem": "Conduct high volume case analysis to identify root causes/trends that can be validated by SMEs and act as a workforce multiplier. ",
+      "output": "Identify trends, applicable regulatory citations, sample for validation, and recommended next steps. "
+    },
+    {
+      "id": "HHS-177",
+      "organization": "HHS/CMS/CM",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "Health Plan Management System - Complaint Tracking Analysis",
+      "row": 177,
+      "stage": "Pre-deployment",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "complaints"
+      ],
+      "problem": "Support the analysis of MA and Part D beneficiary complaints data.",
+      "output": "Complex analysis of a large set of complaint data to identify trends in order to facilitate casework activity."
+    },
+    {
+      "id": "HHS-161",
+      "organization": "HHS/CMS/CCSQ",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "Citation Analysis and Survey Assistant (CASA - Nursing Home Survey CMS 2567)",
+      "row": 161,
+      "stage": "Deployed",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "quality"
+      ],
+      "problem": "CASA enhances the efficiency and effectiveness of monitoring and reviewing nursing home surveys across the US. It enhances how the Quality, Safety, and Oversight Group (QSOG) and Survey Operations Group (SOG) assess how State Survey Agencies (SSAs) are citing nursing home deficiencies, reported on CMS Form 2567, by employing advanced natural language processing and machine learning technologies.",
+      "output": "An application which provides Nursing Home Oversight groups an interface to view, track and utilize all the features supported by aforementioned ML/AI powered processes. "
+    },
+    {
+      "id": "HHS-173",
+      "organization": "HHS/CMS/OFM",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "Artificial Intelligence Use Case Pilot in Medical Review on Medicare Fee-For-Service (FFS) Improper Payment Measurement (Comprehensive Error Rate Testing Program) Data",
+      "row": 173,
+      "stage": "Pre-deployment",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "claims"
+      ],
+      "problem": "OFM is  hoping to leverage cutting-edge AI technology to potentially introduce new efficiencies and accuracy in the Comprehensive Error Rate Testing (CERT) medical review process by moving away from manual medical review which is costly, sometimes inaccurate, and inefficient. ",
+      "output": "Recommendation"
+    },
+    {
+      "id": "HHS-206",
+      "organization": "HHS/CMS/CCIIO",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "RADV Medical Record Review",
+      "row": 206,
+      "stage": "Pre-deployment",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "claims"
+      ],
+      "problem": "(Marketplace) RADV entails the review of enrollees' medical records to determine if diagnoses submitted to CCIIO for purposes of calculating RA transfers actually exist. This medical record review is time- and resource-intensive for KPMG (and therefore CCIIO).",
+      "output": "Reduce time (and therefore costs) spent on RADV medical record review"
+    },
+    {
+      "id": "HHS-204",
+      "organization": "HHS/CMS/CCIIO",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "Rx Data Integrity Review",
+      "row": 204,
+      "stage": "Pre-deployment",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "medication"
+      ],
+      "problem": "The current process for conducting the Rx Data Integrity review is time intensive and requires reviewers to manually review online formularies in a condensed timeline.  The purpose of this proposal is to develop a new process, which will automate as much of the review as possible, using existing language models as well as large language models (LLM) to introduce efficiencies and increase data accuracy. ",
+      "output": "automate as much of the review as possible, and increase data accuracy"
+    },
+    {
+      "id": "HHS-97",
+      "organization": "HHS/CDC",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "DLS AI Assistant tool",
+      "row": 97,
+      "stage": "Pilot",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "lab"
+      ],
+      "problem": "Regulatory laboratory compliance has become increasingly complex, requiring scientists, lab personnel, and managers to understand laboratory quality regulations like the Clinical Laboratory Improvement Amendments (CLIA). The DLS AI Assistant is a tool designed to help scientists and lab workers by providing relevant guidance, such as the internal DLS Policy and Procedures Manual (DLS PPM) and external CLIA and International Organization for Standardization (ISO) regulations for laboratory quality. It offers personalized responses based on the user's level of expertise. In the final stage of the project, we plan to add a feature that will automatically evaluate Standard Operating Procedures (SOPs) to check if they comply with all relevant documents. However, the DLS AI Assistant is meant to assist and does not dictate compliance.",
+      "output": "Text-based information includes regulatory compliance details from both internal sources, such as the DLS Policy and Procedures Manual (DLS PPM), and external sources, like CLIA and International Organization for Standardization (ISO) regulations for laboratory quality."
+    },
+    {
+      "id": "HHS-215",
+      "organization": "HHS/CMS/OIT",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "Eligibility & Enrollment Medicare Online (ELMO) Chatbot",
+      "row": 215,
+      "stage": "Deployed",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "navigation"
+      ],
+      "problem": "Assist Medicare caseworkers in navigating a fairly complex application",
+      "output": "Answers questions about the ELMO tool, how to navigate it, and where to find information"
+    },
+    {
+      "id": "HHS-305",
+      "organization": "HHS/HRSA",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "Program Compliance and Reporting Knowledge Base Chatbot",
+      "row": 305,
+      "stage": "Pre-deployment",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "navigation"
+      ],
+      "problem": "Users often need to navigate multiple technical assistance webpages, manuals, documents, FAQs, or submit inquiries through the contact form to find answers. This can be time-consuming and increases time and support capacity.",
+      "output": "AI chatbot integrated with programmatic requirements and post award  performance reporting system which servers as a knowledge base for FAQs and system step by step guides. Both grantees and internal HRSA users will use the chatbot to get relevant information faster. The AI chatbot will eventually reduce customer support cost."
+    },
+    {
+      "id": "HHS-189",
+      "organization": "HHS/CMS/OC",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "Medicare AI Drug Search",
+      "row": 189,
+      "stage": "Pilot",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "benefits"
+      ],
+      "problem": "Improved customer experience",
+      "output": "Suggestion"
+    },
+    {
+      "id": "HHS-190",
+      "organization": "HHS/CMS/OC",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "Marketplace Qualified Health Plan Benefit AI Assistant (discovery)",
+      "row": 190,
+      "stage": "Pre-deployment",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "benefits"
+      ],
+      "problem": "Improved customer experience",
+      "output": "Suggestion"
+    },
+    {
+      "id": "HHS-208",
+      "organization": "HHS/CMS/CCIIO",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "SBC Content Review",
+      "row": 208,
+      "stage": "Pre-deployment",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "benefits"
+      ],
+      "problem": "(Marketplace) The SBC Content Review identifies cost-sharing discrepancies between the Plans and Benefits Template and SBC Form. If there are discrepancies in the numerical values input in the two data sources, reviewers must manually review the \"Limitations, Exceptions and Other Information\" in the SBC Form to assess if a true discrepancy exists.  The purpose of the proposal is to integrate large language models (LLM) to programmatically review qualitative data in the SBC Form.  ",
+      "output": "Reduce time in identifying true discrepancies."
+    },
+    {
+      "id": "HHS-41",
+      "organization": "HHS/ASTP",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "The NEF DSI/AI project addresses local validation of AI-based clinical decision support (CDS)/decision support interventions (DSI) in provider settings.",
+      "row": 41,
+      "stage": "Pre-deployment",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "validation"
+      ],
+      "problem": "Assess quality of AI-based clinical decision support (CDS) tools",
+      "output": "Outputs are not generated by AI, but rather use open source information to assess outputs from other AI-based tools. This tool's outputs are metrics that measure, for example, accuracy and precision of external AI predictions of disease onsets in local patient populations."
+    },
+    {
+      "id": "HHS-48",
+      "organization": "HHS/CDC",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "Reviewing Global Influenza Vaccine Literature",
+      "row": 48,
+      "stage": "Pilot",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "vaccine-evidence"
+      ],
+      "problem": "To efficiently review a large volume of published literature and identify abstracts related to access to influenza vaccines.",
+      "output": "A list of abstracts from published journal articles that are relevant to vaccine access. These abstracts are identified using large language models and are then reviewed manually for further analysis."
+    },
+    {
+      "id": "HHS-67",
+      "organization": "HHS/CDC",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "Autocoding to Support Adverse Drug Event Surveillance",
+      "row": 67,
+      "stage": "Pilot",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "adverse-coding"
+      ],
+      "problem": "Manual coding of adverse drug event reports is time-consuming and slows down the production of prevalence estimates. The AI model will automate and speed up the coding process for surveillance epidemiologists.",
+      "output": "The model takes a de-identified free-text description of a patient's emergency department visit, along with other pre-coded variables, and outputs the probability that the encounter meets the surveillance case definition for an adverse drug event."
+    },
+    {
+      "id": "HHS-77",
+      "organization": "HHS/CDC",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "1CDP (SEDRIC) AIP for Advanced Foodborne Outbreak Investigation (AI Summarization and Receipt Reading)",
+      "row": 77,
+      "stage": "Deployed",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "outbreak"
+      ],
+      "problem": "This AI solution impacts the process of investigating foodborne disease outbreaks. These foodborne outbreaks require cooperative efforts from CDC staff, FDA, USDA, and local agencies and the AI system is used through a centralized data platform System for Enteric Disease Response, Investigation, and Coordination (also known as SEDRIC). For more information on SEDRIC, please go to our website: https://www.cdc.gov/foodborne-outbreaks/php/foodsafety/tools/index.html",
+      "output": "The Artificial Intelligence Platform (AIP) available within SEDRIC provides CDC epidemiologists the power to accelerate their investigations of multi-state foodborne disease outbreaks. It can extract structured data from grocery receipts, shopper card records, and free-text responses in order to catalog the food items purchased by affected patients. It can also map those items to SEDRIC-defined vehicles which categorize the items and highlight commonalities across patients, helping to pinpoint potential outbreak vehicles. AIP can summarize these results to provide insights from information pulled from shopper receipts. Given ingredients can be found in multiple food products, and some ingredients such as herbs like coriander/cilantro may go by multiple names or be reported in multiple languages, this summarization tool provides a faster way to gather summary information from receipts on different food items which may be part of a foodborne investigation."
+    },
+    {
+      "id": "HHS-82",
+      "organization": "HHS/CDC",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "Nowcasting Injury Trends",
+      "row": 82,
+      "stage": "Deployed",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "injury-trends"
+      ],
+      "problem": "Providing real-time estimates of injury and death trends to enhance situational awareness and expedite surveillance and research activities, especially when gold standard data are delayed.",
+      "output": "An internal-facing, interactive dashboard that provides week-to-week national nowcasts of injury death trends, using multiple traditional and non-traditional datasets and a multi-stage machine learning pipeline."
+    },
+    {
+      "id": "HHS-83",
+      "organization": "HHS/CDC",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "Risk Assessment Module (RAM) for the National Diabetes Prevention Program (National DPP) Operations Center.",
+      "row": 83,
+      "stage": "Deployed",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "prevention"
+      ],
+      "problem": "To assist in determining if an organization participating in the National DPP is at risk of improperly starting, going inactive, or not achieving necessary goals for continued participation in CDC’s Diabetes Prevention Recognition Program.",
+      "output": "The RAM is a reporting tool that ingests organization-level data (including participant enrollment, demographics, and risk factors) to generate a ranked list of organizations at highest risk of failing to meet program objectives. Outputs are currently restricted to CDC associates, with plans for future access by State Quality Specialist users."
+    },
+    {
+      "id": "HHS-84",
+      "organization": "HHS/CDC",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "Semi-Automated Nonresponse Detection for Surveys (SANDS)",
+      "row": 84,
+      "stage": "Deployed",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "survey-check"
+      ],
+      "problem": "Manual review of open-ended survey responses is labor-intensive and cost-prohibitive at scale. SANDS automates the detection of nonresponses in survey data, reducing the burden on researchers and improving data quality.",
+      "output": "The system outputs scores for open-ended survey responses, identifying likely nonresponses and flagging responses that require further review. This helps improve survey data quality and informs questionnaire design."
+    },
+    {
+      "id": "HHS-85",
+      "organization": "HHS/CDC",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "Sequential Coverage Algorithm (SCA) and partial Expectation-Maximization (EM) estimation in Record Linkage",
+      "row": 85,
+      "stage": "Deployed",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "linkage"
+      ],
+      "problem": "To improve the accuracy and efficiency of record linkage in CDC’s National Center for Health Statistics (NCHS) Data Linkage Program, particularly for large datasets, by automating the development and selection of blocking groups and reducing manual effort.",
+      "output": "Development of joining methods (blocking groups) for large datasets \n\nEstimation of the proportion of matched pairs within each block \n\nImproved linkage accuracy and efficiency "
+    },
+    {
+      "id": "HHS-87",
+      "organization": "HHS/CDC",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "Assessing Large Language Models for Synthetic Survey Data Generation",
+      "row": 87,
+      "stage": "Pre-deployment",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "synthetic-data"
+      ],
+      "problem": "Survey data de-identification is crucial for the NCHS to maximize data utility while protecting privacy, but determining and applying modern best practices requires further research. \n\nNCHS conducts national surveys and releases microdata (data containing information about individuals) for public use. To protect survey participants’ confidentiality, statistical disclosure limitation techniques have been used to de-identify data, but these methods have drawbacks of losing statistical properties of the original data and thus limiting useful analyses. Additionally, these methods are not designed for very large data or text data. \n\nUse of synthetic data may offer another option. The goal of synthetic data is to preserve essential statistical features and variable relationships of the original data such that statistical inference based on the synthetic data is close to that of the original data. \n\nLarge language models (LLMs) may be able to address limitations of statistical methods for synthetic data creation, especially for natural language data. We aim to advance knowledge of this application of LLMs to enable staff to select the optimal tools for synthetic data generation. ",
+      "output": "Continuous, categorical, and free text data that matches properties of original survey data."
+    },
+    {
+      "id": "HHS-109",
+      "organization": "HHS/CDC",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "Analyzing multidrug-resistant organism response data\n",
+      "row": 109,
+      "stage": "Pre-deployment",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "amr-notes"
+      ],
+      "problem": "Free text data are collected as part of internal tracking of Antimicrobial Resistance. These data are difficult to clean, categorize, and analyze.",
+      "output": "Categorized free text data related to Antimicrobial Resistance. This will improve the quality and usability of existing data."
+    },
+    {
+      "id": "HHS-112",
+      "organization": "HHS/CDC",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "HIV Data Quality Score (DQS) Project",
+      "row": 112,
+      "stage": "Pre-deployment",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "report-quality"
+      ],
+      "problem": "Currently, 60 health departments and 150 community-based organizations submit National HIV Monitoring and Evaluation (NHM&E) program data using a standard online form. However, this data often contains errors that require significant manual cleanup by CDC's HIV data managers. To address this issue, our project aims to create a large language model (LLM)-based data quality score capable of detecting errors in datasets and measuring dataset cleanliness levels. LLMs can also be utilized to automatically fix some detected errors.",
+      "output": "The outputs include both a List of identified erroneous data fields in a dataset  and a Dataset with some errors automatically corrected. This will be available for future evaluation efforts."
+    },
+    {
+      "id": "HHS-120",
+      "organization": "HHS/CDC",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "Bridging the gap: Leveraging natural language processing to identify reasons for buprenorphine discontinuation in Electronic Health Records",
+      "row": 120,
+      "stage": "Pre-deployment",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "access-barriers"
+      ],
+      "problem": "Life-saving treatment for opioid use disorder (OUD), such as the FDA-approved medication buprenorphine, remains underutilized. Buprenorphine has been shown to reduce illicit opioid use and risk of overdose mortality. Understanding treatment barriers can offer us opportunities for improved recovery.\n\nThe PanTher Electronic Health Records (EHR) data from OptumLabs are a unique and important data asset, containing structured variables, such as diagnoses and procedures, laboratory measures, and medication records, as well as semi-structured data derived from clinical notes through natural language processing (NLP). The NLP-derived data contain helpful contextual information but have been difficult to use thus far.",
+      "output": "Through participation in the Data Science Upskilling Program (DSU), the DOP-DSU team was able to extract actionable insights from EHR, contextualized further by supplementing with NLP-derived data from clinical notes. They developed an algorithm identifying patients with OUD who discontinued buprenorphine and used it to characterize discontinuation reasons using EHR. They were also able to better understand limitations of NLP-derived data from provider notes in EHRs. However, despite the limitations of EHR, findings from this project can complement claims data and surveys from a patient care management perspective, and close the loop in our understanding of patients’ medication access journey."
+    },
+    {
+      "id": "HHS-126",
+      "organization": "HHS/CDC",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "Using Databricks Genie for Routine Immunization Data Insights",
+      "row": 126,
+      "stage": "Pilot",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "immunisation"
+      ],
+      "problem": "The volume of immunization data reported quarterly is approximately 5 billion records. Analyzing this data to gather high-level insights requires complex coding and manipulation. By using a Large Language Model (LLM) based approach, the solution offers a plain language query capability that generates code to provide high-level insights without the need to move or create specific views for program needs. This approach is cost-effective, timely, and provides insights that can be used to improve data quality and inform data management planning by programs.",
+      "output": "SQL Code, Reports, Visualization and Charts"
+    },
+    {
+      "id": "HHS-139",
+      "organization": "HHS/CDC",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "Deep Research for Public Health",
+      "row": 139,
+      "stage": "Pilot",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "public-brief"
+      ],
+      "problem": "Public health agencies like the CDC face challenges in efficiently processing large volumes of complex information, conducting evidence-based research, and producing timely, high-quality analyses and reports to inform decision-making. Traditional workflows for tasks such as literature review, data analysis, policy evaluation, and communications are often time-consuming and resource-intensive. The problem addressed by integrating agentic AI models, such as OpenAI’s Deep Research, is to enhance the efficiency, productivity, and rigor of these core public health functions by automating information retrieval, synthesis, and analysis, thereby enabling faster, more informed, and scalable decision-making while maintaining quality and transparency.",
+      "output": "The output from the AI system consists of detailed, report-style responses tailored to specific public health tasks and prompts. These reports typically include synthesized information from online sources, data analysis, summaries of scientific evidence, policy or legal analysis, and clear recommendations or findings, often with citations. The reports are structured, well-organized, and written in clear language, making them easy for CDC staff and subject matter experts to review and use. According to the evaluation, the outputs scored highly for clarity and reasoning transparency."
+    },
+    {
+      "id": "HHS-156",
+      "organization": "HHS/CMS/OPOLE",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "Medicare Part C/D Marketing Material Review",
+      "row": 156,
+      "stage": "Pre-deployment",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "materials"
+      ],
+      "problem": "Expand the volume of materials reviewed while providing consistent insights into trends and issues with materials received.",
+      "output": "guided recommendations"
+    },
+    {
+      "id": "HHS-164",
+      "organization": "HHS/CMS/CCIIO",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "Improved Data Quality Checks",
+      "row": 164,
+      "stage": "Pre-deployment",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "application-quality"
+      ],
+      "problem": "(Marketplace) Improve consumer experience by providing an asynchronous (not at the same time) solution to detect and provide near real time feedback via outreach to the consumer, shortening the overall return cycle time without requiring UI changes. ",
+      "output": "Improvement of user experience"
+    },
+    {
+      "id": "HHS-280",
+      "organization": "HHS/FDA/ODT",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "ChatBot for Safety Reporting Portal Adverse Events and Product problems submissions",
+      "row": 280,
+      "stage": "Deployed",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "safety-report"
+      ],
+      "problem": "Increases data integrity and aid with routing the user to the correct commodity group to submit their adverse event or product problem. DRUID AI, a COTS tool, boasts a comprehensive suite of functionalities, encompassing conversational flows and seamless diverse data sources integrations such as SQL, ServiceNow, UiPath, API, and knowledge base services. Its sophisticated Natural Language Processing and Understanding capabilities empower precise interpretation of user queries across various languages and dialects. ",
+      "output": "The AI routes to the correct form and helps the user to complete the report faster and endures data integrity. The outputs uses knowledgebase to answer questions, format responses, routes to correct forms, and uses API to submit the report to SRP without having to use the existing legacy app."
+    },
+    {
+      "id": "HHS-303",
+      "organization": "HHS/HRSA",
+      "source_id": "hhs-fy25",
+      "url": "https://www.hhs.gov/programs/topic-sites/ai/use-cases/index.html",
+      "name": "AI identification of \"High-Risk\" Health Centers",
+      "row": 303,
+      "stage": "Pre-deployment",
+      "mapping_type": "Healthcare workflow adaptation",
+      "case_ids": [
+        "oversight"
+      ],
+      "problem": "Manual identification of high-risk health centers is resource-intensive and may miss key indicators across large datasets. Would support a proactive, data-driven approach to inform site visit schedules and technical assistance planning.",
+      "output": "The system would use predictive analytics and risk modeling to generate a prioritized list of health centers considered \"high-risk\" based on predefined indicators (e.g., patient safety concerns, poor quality metrics, application anomalies). Outputs will support more targeted oversight and TA deployment schedules."
+    }
+  ],
+  "selection": {
+    "inventory_records": 446,
+    "mapped_records": 38,
+    "excluded_records": 408,
+    "method": "Manual selection of active/pilot/pre-deployment inventory examples relevant to human healthcare workflows. Other agency, scientific research, retired and out-of-scope entries were not added."
+  }
+}
