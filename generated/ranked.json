@@ -1,0 +1,1076 @@
+{
+  "method": "Analyst estimates for fictional-data prototype suitability; not measured ROI or clinical effectiveness.",
+  "weights": {
+    "value": 25,
+    "feasibility": 25,
+    "data": 20,
+    "safety": 15,
+    "evidence": 10,
+    "clarity": 5
+  },
+  "candidates": [
+    {
+      "id": "records",
+      "title": "Medical record summary",
+      "category": "Healthcare",
+      "sub_category": "Clinical administration",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 290 (header counted as record 1)",
+      "adaptation": "The HHS entry concerns claims review. This prototype adapts document condensation to clinician-reviewed records; it gives no diagnosis or treatment recommendation.",
+      "examples": [
+        "HHS-290"
+      ],
+      "scores": {
+        "value": 5,
+        "feasibility": 5,
+        "data": 5,
+        "safety": 4,
+        "evidence": 5,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Medical records reviewer",
+      "pain": "Reviewing long medical records takes time and makes supporting evidence hard to locate.",
+      "workflow": "Create a dated summary with links to the supplied record passages.",
+      "demo_input": "Three fictional visit notes and a referral letter.",
+      "demo_output": "A chronology, missing-information list and passage references.",
+      "metric": "Summary completeness and incorrect statements per record.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 97
+    },
+    {
+      "id": "redaction",
+      "title": "Patient data redaction",
+      "category": "Healthcare",
+      "sub_category": "Clinical administration",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 90, 117 (header counted as record 1)",
+      "adaptation": "Adapted from HHS health-record PII detection. The prototype is a review aid and does not certify anonymisation.",
+      "examples": [
+        "HHS-90",
+        "HHS-117"
+      ],
+      "scores": {
+        "value": 5,
+        "feasibility": 4,
+        "data": 5,
+        "safety": 5,
+        "evidence": 5,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Health information team",
+      "pain": "Identifiers can appear unexpectedly inside free-text health data.",
+      "workflow": "Highlight possible identifiers and propose redactions for manual review.",
+      "demo_input": "Synthetic notes with deliberately inserted names, addresses and identifiers.",
+      "demo_output": "Marked text, proposed redacted copy and a review log.",
+      "metric": "Missed identifiers and incorrectly removed useful text.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 95
+    },
+    {
+      "id": "intake",
+      "title": "Referral and document intake",
+      "category": "Healthcare",
+      "sub_category": "Clinical administration",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 217 (header counted as record 1)",
+      "adaptation": "The HHS entry concerns case creation from scanned requests. Patient referral routing is a proposed local adaptation, not an HHS deployment claim.",
+      "examples": [
+        "HHS-217"
+      ],
+      "scores": {
+        "value": 5,
+        "feasibility": 5,
+        "data": 5,
+        "safety": 4,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Referral coordinator",
+      "pain": "Staff manually create cases from incoming documents and requests.",
+      "workflow": "Extract administrative fields, propose a case record and flag missing information.",
+      "demo_input": "Fictional referral forms and an explicit required-field checklist.",
+      "demo_output": "A proposed intake record and exceptions for staff approval.",
+      "metric": "Correct field extraction and missed required fields.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 95
+    },
+    {
+      "id": "guidance",
+      "title": "Clinical guidance search",
+      "category": "Healthcare",
+      "sub_category": "Clinical administration",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 27, 51, 154 (header counted as record 1)",
+      "adaptation": "HHS entries concern search and IIS or programme guidance. Adapted to approved clinic material; no independent clinical advice.",
+      "examples": [
+        "HHS-27",
+        "HHS-51",
+        "HHS-154"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 5,
+        "data": 5,
+        "safety": 5,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Low",
+      "user": "Clinical operations staff",
+      "pain": "Staff lose time locating current approved guidance across documents.",
+      "workflow": "Search a small approved guidance library and return cited passages.",
+      "demo_input": "Fictional clinic procedures and approved administrative FAQs.",
+      "demo_output": "A cited answer with source version and an unable-to-answer state.",
+      "metric": "Citation accuracy and time to find the approved passage.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 93
+    },
+    {
+      "id": "translation",
+      "title": "Patient information translation",
+      "category": "Healthcare",
+      "sub_category": "Patient services",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 186 (header counted as record 1)",
+      "adaptation": "HHS reports translation support in Smartling. This is an adaptation to patient communication, not evidence of medical translation accuracy.",
+      "examples": [
+        "HHS-186"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 5,
+        "data": 5,
+        "safety": 4,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Patient communications team",
+      "pain": "Approved patient information may be inaccessible in the reader\u2019s language.",
+      "workflow": "Draft a translation of approved administrative information for bilingual review.",
+      "demo_input": "Fictional appointment preparation and access instructions.",
+      "demo_output": "A translation draft and a list of terms requiring verification.",
+      "metric": "Meaning preserved and critical terms checked by a qualified reviewer.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 90
+    },
+    {
+      "id": "complaints",
+      "title": "Patient complaint analysis",
+      "category": "Healthcare",
+      "sub_category": "Quality and operations",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 152, 177 (header counted as record 1)",
+      "adaptation": "HHS examples concern beneficiary complaints. Adapted to service improvement; the tool does not decide complaint outcomes.",
+      "examples": [
+        "HHS-152",
+        "HHS-177"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 5,
+        "safety": 4,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Patient experience team",
+      "pain": "Large complaint volumes obscure recurring service problems.",
+      "workflow": "Group fictional complaints by theme and cite representative passages.",
+      "demo_input": "Synthetic service complaints without real personal details.",
+      "demo_output": "A theme summary, examples and proposed follow-up questions.",
+      "metric": "Theme agreement with staff and incorrectly grouped complaints.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 85
+    },
+    {
+      "id": "navigation",
+      "title": "Healthcare service navigation",
+      "category": "Healthcare",
+      "sub_category": "Patient services",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 215, 305 (header counted as record 1)",
+      "adaptation": "Adapted from ELMO and programme knowledge-base support. No entitlement or eligibility determination.",
+      "examples": [
+        "HHS-215",
+        "HHS-305"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 5,
+        "safety": 4,
+        "evidence": 3,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Service support team",
+      "pain": "Users need help navigating service systems and reporting requirements.",
+      "workflow": "Explain an approved administrative process and provide the next reviewable step.",
+      "demo_input": "A fictional service manual and system navigation guide.",
+      "demo_output": "A cited navigation answer with staff handoff when unclear.",
+      "metric": "Correct next-step guidance and successful handoffs.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 83
+    },
+    {
+      "id": "survey-check",
+      "title": "Health survey response quality",
+      "category": "Healthcare",
+      "sub_category": "Public health",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 84 (header counted as record 1)",
+      "adaptation": "Inspired by SANDS. Reviewers decide whether to retain responses; the tool does not infer respondents\u2019 health status.",
+      "examples": [
+        "HHS-84"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 4,
+        "safety": 4,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Low",
+      "user": "Health survey reviewer",
+      "pain": "Open-ended survey nonresponses are expensive to review manually.",
+      "workflow": "Flag blank, irrelevant or ambiguous responses against a supplied rubric.",
+      "demo_input": "Synthetic health-survey responses and a review rubric.",
+      "demo_output": "A quality review queue with reason codes and original response text.",
+      "metric": "Agreement with manual review and useful responses incorrectly flagged.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 81
+    },
+    {
+      "id": "lab",
+      "title": "Laboratory procedure search",
+      "category": "Healthcare",
+      "sub_category": "Clinical administration",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 97 (header counted as record 1)",
+      "adaptation": "Inspired by the DLS AI Assistant pilot. US CLIA/ISO references in the original inventory are not automatically Australian requirements.",
+      "examples": [
+        "HHS-97"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 4,
+        "safety": 4,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Laboratory quality team",
+      "pain": "Laboratory staff need quick access to procedure and quality guidance.",
+      "workflow": "Retrieve cited passages from an approved laboratory procedure pack.",
+      "demo_input": "Fictional SOPs and laboratory quality FAQs.",
+      "demo_output": "A referenced response with document version.",
+      "metric": "Source accuracy and missing information identified.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 81
+    },
+    {
+      "id": "benefits",
+      "title": "Health benefits document comparison",
+      "category": "Healthcare",
+      "sub_category": "Patient services",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 189, 190, 208 (header counted as record 1)",
+      "adaptation": "Inspired by Marketplace benefits assistance and SBC review. Local benefits must be supplied; the prototype does not determine coverage.",
+      "examples": [
+        "HHS-189",
+        "HHS-190",
+        "HHS-208"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 4,
+        "safety": 4,
+        "evidence": 3,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Benefits information reviewer",
+      "pain": "Benefits documents can contain inconsistent wording or numerical values.",
+      "workflow": "Compare two fictional benefits documents and identify differences.",
+      "demo_input": "Synthetic benefit summaries and explicitly supplied policy clauses.",
+      "demo_output": "A difference table with supporting quotes.",
+      "metric": "Discrepancy accuracy and unsupported coverage claims.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 79
+    },
+    {
+      "id": "quality",
+      "title": "Care quality document review",
+      "category": "Healthcare",
+      "sub_category": "Quality and operations",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 161 (header counted as record 1)",
+      "adaptation": "Inspired by CASA nursing-home survey review. The demo flags evidence for review; it makes no regulatory finding.",
+      "examples": [
+        "HHS-161"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 4,
+        "safety": 3,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "High",
+      "user": "Quality improvement reviewer",
+      "pain": "Reviewing care-quality reports against documented standards is time-consuming.",
+      "workflow": "Compare fictional quality observations with an explicit checklist.",
+      "demo_input": "Synthetic care-quality observations and a supplied local checklist.",
+      "demo_output": "A cited checklist review with issues for qualified assessment.",
+      "metric": "Missed checklist gaps and reviewer agreement.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 78
+    },
+    {
+      "id": "claims",
+      "title": "Claims evidence preparation",
+      "category": "Healthcare",
+      "sub_category": "Clinical administration",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 173, 206 (header counted as record 1)",
+      "adaptation": "US Medicare and Marketplace examples need Australian process adaptation. No automated eligibility, payment or coverage decision.",
+      "examples": [
+        "HHS-173",
+        "HHS-206"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 4,
+        "safety": 3,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "High",
+      "user": "Claims documentation reviewer",
+      "pain": "Medical evidence for a claim must be manually located and cross-referenced.",
+      "workflow": "Assemble supplied evidence against an explicit fictional claim checklist.",
+      "demo_input": "Synthetic claim packet, record excerpts and declared review requirements.",
+      "demo_output": "An evidence index and missing-document questions.",
+      "metric": "Evidence retrieval accuracy and unsupported assertions.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 78
+    },
+    {
+      "id": "application-quality",
+      "title": "Health application completeness",
+      "category": "Healthcare",
+      "sub_category": "Patient services",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 164 (header counted as record 1)",
+      "adaptation": "Adapted from Marketplace data-quality checks. No eligibility determination, automatic outreach or source-system change.",
+      "examples": [
+        "HHS-164"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 4,
+        "safety": 3,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Health service intake reviewer",
+      "pain": "Missing or inconsistent application information delays the consumer feedback cycle.",
+      "workflow": "Check a fictional application and draft requests for missing information.",
+      "demo_input": "Synthetic health-service applications and required-field rules.",
+      "demo_output": "A completeness checklist and a draft follow-up message.",
+      "metric": "Missed required fields and unnecessary follow-up requests.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 78
+    },
+    {
+      "id": "materials",
+      "title": "Health plan communication review",
+      "category": "Healthcare",
+      "sub_category": "Patient services",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 156 (header counted as record 1)",
+      "adaptation": "Inspired by Medicare Part C/D marketing review. Local rules must be supplied; no regulatory compliance certification.",
+      "examples": [
+        "HHS-156"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 4,
+        "safety": 3,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Patient communications reviewer",
+      "pain": "Health plan materials can contain inconsistent or unclear statements.",
+      "workflow": "Review fictional materials against a supplied communication checklist.",
+      "demo_input": "Synthetic brochures, benefit statements and a review checklist.",
+      "demo_output": "A cited issue table and wording suggestions for approval.",
+      "metric": "Checklist gaps detected and unjustified findings.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 78
+    },
+    {
+      "id": "report-quality",
+      "title": "Health programme data quality",
+      "category": "Healthcare",
+      "sub_category": "Health data",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 112 (header counted as record 1)",
+      "adaptation": "Inspired by HIV DQS. Generalised to fictional programme reporting; no real HIV data or automatic source changes.",
+      "examples": [
+        "HHS-112"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 4,
+        "safety": 3,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Programme data manager",
+      "pain": "Submitted programme datasets contain errors requiring manual cleanup.",
+      "workflow": "Check required fields and logical constraints, then propose corrections for approval.",
+      "demo_input": "Synthetic programme submissions with deliberately inserted data errors.",
+      "demo_output": "A field-level issue list and proposed changes with an audit trail.",
+      "metric": "Errors detected and incorrect corrections.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 78
+    },
+    {
+      "id": "immunisation",
+      "title": "Immunisation reporting explorer",
+      "category": "Healthcare",
+      "sub_category": "Public health",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 126 (header counted as record 1)",
+      "adaptation": "Inspired by Databricks Genie immunisation insights. Queries a fixed local synthetic dataset; no individual vaccination recommendation.",
+      "examples": [
+        "HHS-126"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 4,
+        "safety": 3,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Immunisation programme analyst",
+      "pain": "Aggregate immunisation reporting requires specialised queries and data preparation.",
+      "workflow": "Translate a plain-language question into a visible query against a synthetic dataset.",
+      "demo_input": "Synthetic aggregate immunisation data and a documented data dictionary.",
+      "demo_output": "A reviewable query, result table and chart.",
+      "metric": "Query correctness and consistency with manually calculated totals.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 78
+    },
+    {
+      "id": "prevention",
+      "title": "Prevention programme follow-up",
+      "category": "Healthcare",
+      "sub_category": "Quality and operations",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 83 (header counted as record 1)",
+      "adaptation": "Adapted from National DPP organisation risk assessment. No patient-level risk prediction or programme eligibility decision.",
+      "examples": [
+        "HHS-83"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 4,
+        "safety": 3,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Prevention programme coordinator",
+      "pain": "Programme teams need to identify organisations missing participation or performance milestones.",
+      "workflow": "Check organisation-level milestones and draft follow-up questions for staff review.",
+      "demo_input": "Fictional programme enrolment counts, milestones and declared rules.",
+      "demo_output": "A review queue with missed milestones and supporting evidence.",
+      "metric": "Correct flags and inappropriate escalations.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 78
+    },
+    {
+      "id": "public-brief",
+      "title": "Public health evidence brief",
+      "category": "Healthcare",
+      "sub_category": "Public health",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 139 (header counted as record 1)",
+      "adaptation": "Adapted from Deep Research for Public Health. Fixed supplied sources rather than autonomous policy or legal recommendations.",
+      "examples": [
+        "HHS-139"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 4,
+        "safety": 3,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Public health policy reviewer",
+      "pain": "Staff need timely, traceable summaries across complex public health information.",
+      "workflow": "Build a concise brief from a fixed source pack with citations and evidence gaps.",
+      "demo_input": "Approved public health excerpts and an explicit question.",
+      "demo_output": "A cited draft brief distinguishing facts, uncertainties and proposed follow-up.",
+      "metric": "Citation support and omissions against the source pack.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 78
+    },
+    {
+      "id": "synthetic-data",
+      "title": "Synthetic health survey sandbox",
+      "category": "Healthcare",
+      "sub_category": "Health data",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 87 (header counted as record 1)",
+      "adaptation": "Inspired by NCHS synthetic survey research. Uses invented inputs only and makes no privacy guarantee or claim of equivalent analytic utility.",
+      "examples": [
+        "HHS-87"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 4,
+        "safety": 3,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Health data evaluation team",
+      "pain": "Teams need realistic test data without exposing survey participants.",
+      "workflow": "Generate fictional survey examples from a declared schema and compare aggregate properties.",
+      "demo_input": "A fictional survey schema and manually declared distributions.",
+      "demo_output": "Synthetic test rows and a validation report.",
+      "metric": "Schema validity and aggregate distribution differences.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 78
+    },
+    {
+      "id": "vaccine-evidence",
+      "title": "Vaccine access evidence screening",
+      "category": "Healthcare",
+      "sub_category": "Public health",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 48 (header counted as record 1)",
+      "adaptation": "Follows the inventory\u2019s vaccine-access abstract screening workflow. Human reviewers make inclusion decisions; no vaccination recommendation is generated.",
+      "examples": [
+        "HHS-48"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 4,
+        "data": 4,
+        "safety": 3,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Public health evidence reviewer",
+      "pain": "Reviewers must screen many abstracts to find evidence about vaccine access.",
+      "workflow": "Screen supplied abstracts against explicit inclusion criteria and cite the matching text.",
+      "demo_input": "A small public abstract pack and vaccine-access screening criteria.",
+      "demo_output": "A candidate reading list with reasons to include or exclude each abstract.",
+      "metric": "Agreement with manual screening and missed relevant abstracts.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 78
+    },
+    {
+      "id": "medication",
+      "title": "Medication document consistency",
+      "category": "Healthcare",
+      "sub_category": "Clinical administration",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 204 (header counted as record 1)",
+      "adaptation": "Adapted from Rx formulary integrity review. The demo does not verify dosages, prescribe or recommend medication changes.",
+      "examples": [
+        "HHS-204"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 3,
+        "data": 4,
+        "safety": 3,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "High",
+      "user": "Pharmacy documentation reviewer",
+      "pain": "Medication-related documents can contain inconsistent entries across sources.",
+      "workflow": "Compare supplied text entries and flag discrepancies for pharmacist review.",
+      "demo_input": "Fictional medication lists and reference documents.",
+      "demo_output": "A discrepancy report quoting both sources.",
+      "metric": "Discrepancies found and false positives.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 73
+    },
+    {
+      "id": "adverse-coding",
+      "title": "Adverse event coding review",
+      "category": "Healthcare",
+      "sub_category": "Patient safety",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 67 (header counted as record 1)",
+      "adaptation": "Inspired by CDC adverse drug event surveillance. This prototype proposes reviewed codes rather than estimating clinical event probabilities or diagnosing patients.",
+      "examples": [
+        "HHS-67"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 3,
+        "data": 4,
+        "safety": 2,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "High",
+      "user": "Surveillance coding reviewer",
+      "pain": "Manually coding emergency-visit narratives slows adverse event surveillance.",
+      "workflow": "Suggest surveillance labels from fictional narratives and explain the evidence for review.",
+      "demo_input": "Synthetic emergency visit descriptions and supplied coding definitions.",
+      "demo_output": "Proposed labels, cited evidence and an uncertain-case queue.",
+      "metric": "Coding agreement and missed adverse-event examples.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 70
+    },
+    {
+      "id": "oversight",
+      "title": "Care quality visit planning",
+      "category": "Healthcare",
+      "sub_category": "Quality and operations",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 303 (header counted as record 1)",
+      "adaptation": "Inspired by HRSA high-risk health-centre identification. No enforcement, eligibility or automated visit scheduling; reviewers make decisions.",
+      "examples": [
+        "HHS-303"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 3,
+        "data": 4,
+        "safety": 2,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "High",
+      "user": "Care quality oversight coordinator",
+      "pain": "Planning site visits requires reviewing many quality indicators across centres.",
+      "workflow": "Compare synthetic centre metrics against declared indicators and prepare a review queue.",
+      "demo_input": "Fictional centre-level quality metrics and explicit scheduling criteria.",
+      "demo_output": "A prioritisation worksheet with reasons and missing-data flags.",
+      "metric": "Agreement with the declared criteria and incorrectly flagged centres.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 70
+    },
+    {
+      "id": "validation",
+      "title": "Clinical AI validation checklist",
+      "category": "Healthcare",
+      "sub_category": "Quality and operations",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 41 (header counted as record 1)",
+      "adaptation": "Inspired by the NEF local CDS validation project. This demo evaluates fictional outputs; it does not validate a clinical system for use.",
+      "examples": [
+        "HHS-41"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 3,
+        "data": 4,
+        "safety": 2,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "High",
+      "user": "Clinical governance reviewer",
+      "pain": "Locally deployed decision support needs evaluation against suitable reference labels.",
+      "workflow": "Compare supplied fictional predictions with reference labels and display review metrics.",
+      "demo_input": "Synthetic labelled test cases and declared acceptance thresholds.",
+      "demo_output": "An accuracy and error breakdown, with limitations for governance review.",
+      "metric": "Error rates by test group and reproducibility.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 70
+    },
+    {
+      "id": "linkage",
+      "title": "Health record matching review",
+      "category": "Healthcare",
+      "sub_category": "Clinical administration",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 85 (header counted as record 1)",
+      "adaptation": "Adapted from NCHS record linkage. No automatic merge, clinical identity assertion or production patient linkage.",
+      "examples": [
+        "HHS-85"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 3,
+        "data": 4,
+        "safety": 2,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "High",
+      "user": "Health data steward",
+      "pain": "Linking records across datasets requires careful matching and duplicate review.",
+      "workflow": "Propose candidate record pairs using declared matching fields for manual confirmation.",
+      "demo_input": "Synthetic records with known duplicates and deliberate near matches.",
+      "demo_output": "Candidate pairs, match reasons and unresolved conflicts.",
+      "metric": "False merges and missed true matches.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 70
+    },
+    {
+      "id": "amr-notes",
+      "title": "Infection response note categorisation",
+      "category": "Healthcare",
+      "sub_category": "Patient safety",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 109 (header counted as record 1)",
+      "adaptation": "Based on CDC AMR response-data categorisation. It does not diagnose infection, recommend antibiotics or decide infection-control action.",
+      "examples": [
+        "HHS-109"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 3,
+        "data": 4,
+        "safety": 2,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "High",
+      "user": "Infection prevention reviewer",
+      "pain": "Free-text antimicrobial resistance response notes are hard to clean and analyse.",
+      "workflow": "Propose categories for fictional response notes and preserve the supporting text.",
+      "demo_input": "Synthetic infection-response logs and a supplied category list.",
+      "demo_output": "A categorised table with ambiguous entries marked for review.",
+      "metric": "Category agreement and missed response details.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 70
+    },
+    {
+      "id": "injury-trends",
+      "title": "Injury surveillance trend dashboard",
+      "category": "Healthcare",
+      "sub_category": "Public health",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 82 (header counted as record 1)",
+      "adaptation": "The HHS system nowcasts national injury deaths. The initial prototype is descriptive; a validated forecasting model would be separate work.",
+      "examples": [
+        "HHS-82"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 3,
+        "data": 4,
+        "safety": 2,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "High",
+      "user": "Surveillance analyst",
+      "pain": "Delayed injury reporting makes current trends difficult to interpret.",
+      "workflow": "Visualise supplied aggregate weekly counts and flag incomplete reporting periods.",
+      "demo_input": "Synthetic aggregate injury counts with reporting-delay metadata.",
+      "demo_output": "A trend dashboard separating observed values from any experimental estimates.",
+      "metric": "Trend calculation accuracy and uncertainty coverage on held-out synthetic data.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 70
+    },
+    {
+      "id": "outbreak",
+      "title": "Outbreak investigation summary",
+      "category": "Healthcare",
+      "sub_category": "Public health",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 77 (header counted as record 1)",
+      "adaptation": "Adapted from SEDRIC summarisation and receipt reading. It makes no outbreak attribution or public health action decision.",
+      "examples": [
+        "HHS-77"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 3,
+        "data": 4,
+        "safety": 2,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "High",
+      "user": "Outbreak investigation team",
+      "pain": "Outbreak investigators must combine receipts, interview notes and shared case information.",
+      "workflow": "Extract food purchases and summarise the supplied investigation timeline with citations.",
+      "demo_input": "Synthetic receipts and fictional interview notes.",
+      "demo_output": "A purchase table, chronology and unresolved investigator questions.",
+      "metric": "Extraction accuracy and unsupported connections.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 70
+    },
+    {
+      "id": "safety-report",
+      "title": "Patient safety report assistance",
+      "category": "Healthcare",
+      "sub_category": "Patient safety",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 280 (header counted as record 1)",
+      "adaptation": "Adapted from the FDA Safety Reporting Portal chatbot for human healthcare reporting only. Does not submit reports or judge causality.",
+      "examples": [
+        "HHS-280"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 3,
+        "data": 4,
+        "safety": 2,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "High",
+      "user": "Patient safety reporting team",
+      "pain": "Reporters can struggle to select a form and provide complete adverse-event information.",
+      "workflow": "Explain supplied form options and identify missing report fields for staff review.",
+      "demo_input": "A fictional incident, form catalogue and required-field checklist.",
+      "demo_output": "A suggested form and a report draft with missing fields highlighted.",
+      "metric": "Correct form selection and report completeness.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 70
+    },
+    {
+      "id": "access-barriers",
+      "title": "Treatment access barrier review",
+      "category": "Healthcare",
+      "sub_category": "Quality and operations",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 120 (header counted as record 1)",
+      "adaptation": "Adapted from the buprenorphine discontinuation project. No inference of substance use, treatment advice or individual risk prediction.",
+      "examples": [
+        "HHS-120"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 3,
+        "data": 4,
+        "safety": 2,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "High",
+      "user": "Care improvement reviewer",
+      "pain": "Service teams need to understand documented reasons for treatment discontinuation.",
+      "workflow": "Extract explicitly stated access barriers from fictional notes and group them for review.",
+      "demo_input": "Synthetic treatment journey notes with stated transport, access or scheduling barriers.",
+      "demo_output": "A cited barrier summary with unknown reasons left unresolved.",
+      "metric": "Extraction agreement and reasons invented by the tool.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 70
+    }
+  ],
+  "top_five": [
+    {
+      "id": "records",
+      "title": "Medical record summary",
+      "category": "Healthcare",
+      "sub_category": "Clinical administration",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 290 (header counted as record 1)",
+      "adaptation": "The HHS entry concerns claims review. This prototype adapts document condensation to clinician-reviewed records; it gives no diagnosis or treatment recommendation.",
+      "examples": [
+        "HHS-290"
+      ],
+      "scores": {
+        "value": 5,
+        "feasibility": 5,
+        "data": 5,
+        "safety": 4,
+        "evidence": 5,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Medical records reviewer",
+      "pain": "Reviewing long medical records takes time and makes supporting evidence hard to locate.",
+      "workflow": "Create a dated summary with links to the supplied record passages.",
+      "demo_input": "Three fictional visit notes and a referral letter.",
+      "demo_output": "A chronology, missing-information list and passage references.",
+      "metric": "Summary completeness and incorrect statements per record.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 97
+    },
+    {
+      "id": "redaction",
+      "title": "Patient data redaction",
+      "category": "Healthcare",
+      "sub_category": "Clinical administration",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 90, 117 (header counted as record 1)",
+      "adaptation": "Adapted from HHS health-record PII detection. The prototype is a review aid and does not certify anonymisation.",
+      "examples": [
+        "HHS-90",
+        "HHS-117"
+      ],
+      "scores": {
+        "value": 5,
+        "feasibility": 4,
+        "data": 5,
+        "safety": 5,
+        "evidence": 5,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Health information team",
+      "pain": "Identifiers can appear unexpectedly inside free-text health data.",
+      "workflow": "Highlight possible identifiers and propose redactions for manual review.",
+      "demo_input": "Synthetic notes with deliberately inserted names, addresses and identifiers.",
+      "demo_output": "Marked text, proposed redacted copy and a review log.",
+      "metric": "Missed identifiers and incorrectly removed useful text.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 95
+    },
+    {
+      "id": "intake",
+      "title": "Referral and document intake",
+      "category": "Healthcare",
+      "sub_category": "Clinical administration",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 217 (header counted as record 1)",
+      "adaptation": "The HHS entry concerns case creation from scanned requests. Patient referral routing is a proposed local adaptation, not an HHS deployment claim.",
+      "examples": [
+        "HHS-217"
+      ],
+      "scores": {
+        "value": 5,
+        "feasibility": 5,
+        "data": 5,
+        "safety": 4,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Referral coordinator",
+      "pain": "Staff manually create cases from incoming documents and requests.",
+      "workflow": "Extract administrative fields, propose a case record and flag missing information.",
+      "demo_input": "Fictional referral forms and an explicit required-field checklist.",
+      "demo_output": "A proposed intake record and exceptions for staff approval.",
+      "metric": "Correct field extraction and missed required fields.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 95
+    },
+    {
+      "id": "guidance",
+      "title": "Clinical guidance search",
+      "category": "Healthcare",
+      "sub_category": "Clinical administration",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 27, 51, 154 (header counted as record 1)",
+      "adaptation": "HHS entries concern search and IIS or programme guidance. Adapted to approved clinic material; no independent clinical advice.",
+      "examples": [
+        "HHS-27",
+        "HHS-51",
+        "HHS-154"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 5,
+        "data": 5,
+        "safety": 5,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Low",
+      "user": "Clinical operations staff",
+      "pain": "Staff lose time locating current approved guidance across documents.",
+      "workflow": "Search a small approved guidance library and return cited passages.",
+      "demo_input": "Fictional clinic procedures and approved administrative FAQs.",
+      "demo_output": "A cited answer with source version and an unable-to-answer state.",
+      "metric": "Citation accuracy and time to find the approved passage.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 93
+    },
+    {
+      "id": "translation",
+      "title": "Patient information translation",
+      "category": "Healthcare",
+      "sub_category": "Patient services",
+      "sector": "Human healthcare",
+      "source_id": "hhs-fy25",
+      "locator": "CSV records 186 (header counted as record 1)",
+      "adaptation": "HHS reports translation support in Smartling. This is an adaptation to patient communication, not evidence of medical translation accuracy.",
+      "examples": [
+        "HHS-186"
+      ],
+      "scores": {
+        "value": 4,
+        "feasibility": 5,
+        "data": 5,
+        "safety": 4,
+        "evidence": 4,
+        "clarity": 5
+      },
+      "risk": "Medium",
+      "user": "Patient communications team",
+      "pain": "Approved patient information may be inaccessible in the reader\u2019s language.",
+      "workflow": "Draft a translation of approved administrative information for bilingual review.",
+      "demo_input": "Fictional appointment preparation and access instructions.",
+      "demo_output": "A translation draft and a list of terms requiring verification.",
+      "metric": "Meaning preserved and critical terms checked by a qualified reviewer.",
+      "stage": "Scoped prototype candidate",
+      "weighted_score": 90
+    }
+  ]
+}
